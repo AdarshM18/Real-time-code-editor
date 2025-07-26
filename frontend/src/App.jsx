@@ -3,7 +3,8 @@ import "./App.css";
 import io from "socket.io-client";
 import Editor from "@monaco-editor/react";
 
-const socket = io("http://localhost:5000");
+const socket = io(import.meta.env.VITE_SOCKET_URL);
+// const socket = io(import.meta.env.production.VITE_SOCKET_URL);
 
 const App = () => {
   const [joined, setJoined] = useState(false);
